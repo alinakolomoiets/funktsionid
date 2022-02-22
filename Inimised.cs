@@ -8,26 +8,40 @@ namespace funktsionid
     {
         static void Main (string []args)
         {
-            LinkedList<int> alguses = new LinkedList<int>();
-            for (int i = 0; i < 5; i++)
-            {
-                alguses.AddLast(int.Parse(Console.ReadLine()));
-            }
-            LinkedList<int>.Enumerator ahel1 = alguses.GetEnumerator();
-            while(ahel1.MoveNext())
-            {
-                Console.WriteLine(ahel1.Current);
-            }
-            int j = 0;
-            foreach (int item in alguses)
-            {
-                if (j==0)
+            LinkedList<int> arv = new LinkedList<int>();
+            Random rnd = new Random(20);
+            for (int i = 0; i < 20; i++)
+            { 
+                int arvud = rnd.Next(1, 40);
+                int newarv = arvud % 2;
+                if (newarv == 0)
                 {
-                    
+                    arv.AddFirst(arvud);
                 }
-                j++;
-            }
-            Console.ReadLine();
+                else
+                {
+                    arv.AddLast(arvud);
+                }
+        }
+        //for (int i = 0; i < 5; i++)
+        //{
+        //    alguses.AddLast(int.Parse(Console.ReadLine()));
+        //}
+        //LinkedList<int>.Enumerator ahel1 = alguses.GetEnumerator();
+        //while(ahel1.MoveNext())
+        //{
+        //    Console.WriteLine(ahel1.Current);
+        //}
+        //int j = 0;
+        //foreach (int item in alguses)
+        //{
+        //    if (j==0)
+        //    {
+
+        //    }
+        //    j++;
+        //}
+        Console.ReadLine();
 
             //Dictionary<int,string>opilased= new Dictionary<int, string>(6);
             //opilased.Add(74589, "Mihail");
